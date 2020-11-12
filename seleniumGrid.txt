@@ -1,0 +1,16 @@
+A：主机
+B：辅机
+
+A:
+启hub节点：
+java -jar E:\myziliao\selenium3.5.1\selenium-server-standalone-3.5.1.jar -role hub -port 4444
+打开网页：
+http://localhost:4444/grid/console
+启A的node节点：
+java -Dwebdriver.chrome.driver=E:\myziliao\Jselenium\driver\chromedriver.exe -jar E:\myziliao\selenium3.5.1\selenium-server-standalone-3.5.1.jar -role node -port 5555 -hub http://192.168.31.241:4444/grid/register -browser browserName=chrome
+
+
+B:
+启B的node节点：
+java -Dwebdriver.chrome.driver=E:\selenium\chromedriver.exe -jar E:\selenium\selenium3.5.1\selenium-server-standalone-3.5.1.jar -role node -port 6666?-hub http://192.168.31.241:4444/grid/register?-browser?browserName=chrome
+
